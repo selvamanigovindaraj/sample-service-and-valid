@@ -1,32 +1,43 @@
 <div class="container jumbotron">
-    <form #employeeForm="ngForm" (ngSubmit)='onRegister(employeeForm.value)' novalidate>
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" name="name" minlength="5"  #Employeename="ngModel" required ngModel>
-            <div *ngIf="Employeename.errors && (Employeename.touched|| Employeename.dirty)" class="alert alert-danger">
-                <div [hidden]="!Employeename.errors.required">
-                    Please fill this
-                </div>
-                <div [hidden]="!Employeename.errors.minlength">
-                    Please fill 4 char
-                </div>
-            </div>
+  <form #employeeForm="ngForm" (ngSubmit)='onRegister(employeeForm.value)' novalidate>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" name="name" minlength="5" #Employeename="ngModel" required ngModel>
+      <div *ngIf="Employeename.errors && (Employeename.touched|| Employeename.dirty)" class="alert alert-danger">
+        <div [hidden]="!Employeename.errors.required">
+          Please fill this
         </div>
-        <div class="form-check form-check-inline">
-            <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male" checked ngModel>Male
-            </label>
+        <div [hidden]="!Employeename.errors.minlength">
+          Please fill 4 char
         </div>
-        <div class="form-check form-check-inline">
-            <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female" ngModel> Female
-            </label>
-        </div>
+      </div>
+    </div>
+    <div class="form-check form-check-inline">
+      <label class="form-check-label">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male" checked ngModel>Male
+      </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <label class="form-check-label">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female" ngModel> Female
+      </label>
+    </div>
+    <select [(ngModel)]="chosenOption" name="first">
+      <option>
+        Hindu
+      </option>
+      <option>
+        muslim
+      </option>
+      <option>
+        others
+      </option>
+    </select>
+    <input type="checkbox" name="checkbox" ngModel>
 
-        <input type="checkbox" name="checkbox" ngModel>
 
-
-       <p><button [disabled]="!employeeForm.form.valid" class="btn btn-primary btn-lg" type="submit">Register</button></p> 
-    </form>
+    <p>
+      <button [disabled]="!employeeForm.form.valid" class="btn btn-primary btn-lg" type="submit">Register</button>
+    </p>
+  </form>
 </div>
-  
