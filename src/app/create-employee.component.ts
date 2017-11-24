@@ -9,11 +9,12 @@ import { Validators } from '@angular/forms';
 })
 
 export class CreateEmployeeComponent implements OnInit {
-   
+   imgfile:any;
     constructor(private _employeeService:EmployeeServiceService) { }
     response: string;
     ngOnInit() { }
     onRegister(value: object) {
+       value.add(this.imgfile)
         console.log(value)
         // this._employeeService.create(value)
         // .subscribe( responseData => this.response = responseData)
@@ -24,6 +25,9 @@ export class CreateEmployeeComponent implements OnInit {
         //     this.selectedHero = null;
         //   }
         
+      }
+      uploadimg(imageinput:any){
+        this.imgfile= imageinput.target.files;
       }
     
       
