@@ -11,5 +11,5 @@ script:
   ng build 
 
 after_success:
-  - npm i -g firebase-ci
-  - firebase-ci deploy
+   npm i -g firebase-ci
+   firebase-ci deploy
