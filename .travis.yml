@@ -3,12 +3,12 @@ language: node_js
 node_js:
   - stable
 
-install:
+before-script:
   - npm install -g firebase-tools
   - npm install -g @angular/cli
-  - mpm install
+
 script:
-  ng build 
+  - ng build 
 
 after_success:
-  - firebase deploy --token $FIREBASE_TOKEN 
+  - firebase deploy --token 
