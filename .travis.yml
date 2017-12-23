@@ -11,4 +11,5 @@ script:
   ng build 
 
 after_success:
-  firebase deploy --token "$FIREBASE_TOKEN" 
+  - npm i -g firebase-ci
+  - firebase-ci deploy
