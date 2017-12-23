@@ -14,7 +14,7 @@ export class CreateEmployeeComponent implements OnInit {
     response: string;
     ngOnInit() { }
     onRegister(value: object) {
-       value.add(this.imgfile)
+      //  value.add(this.imgfile)
         console.log(value)
         // this._employeeService.create(value)
         // .subscribe( responseData => this.response = responseData)
