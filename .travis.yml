@@ -12,7 +12,7 @@ before-script:
 
  
 script:
-  - ng build --prod --aot
+  - ng build 
 
 after_success:
-  - firebase deploy --token 
+  - firebase deploy --token $FIREBASE_TOKEN
